@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Un segundo lo cambia todo</title><style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #000000, #1a1a1a);
+        color: white;
+        overflow-x: hidden;
+    }
+
+    header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        animation: fadeIn 2s ease-in;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: #e63946;
+    }
+
+    p {
+        font-size: 18px;
+        max-width: 600px;
+    }
+
+    .btn {
+        margin-top: 20px;
+        padding: 12px 25px;
+        background-color: #e63946;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #ff4d5a;
+        transform: scale(1.1);
+    }
+
+    section {
+        padding: 80px 20px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 1s ease;
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .highlight {
+        color: #f1fa8c;
+        font-weight: bold;
+    }
+
+    footer {
+        padding: 20px;
+        text-align: center;
+        background-color: black;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+</style></head>
+<body><header>
+    <h1>Un segundo lo cambia todo</h1>
+    <p>No sabes cuándo será la última vez que discutas con tus padres… o la última vez que puedas abrazarlos.</p>
+    <button class="btn" onclick="scrollToContent()">Reflexiona</button>
+</header><section>
+    <h2>La realidad</h2>
+    <p>
+        Muchas veces creemos que siempre habrá tiempo.
+        Tiempo para pedir perdón, para hablar, para arreglar las cosas.
+    </p>
+    <p class="highlight">
+        Pero la vida no avisa.
+    </p>
+</section><section>
+    <h2>Un momento</h2>
+    <p>
+        Un enojo… una decisión… salir sin pensar.
+    </p>
+    <p>
+        Y de pronto, todo puede cambiar en segundos.
+    </p>
+    <p class="highlight">
+        Lo último que dijiste… puede ser lo que más pese.
+    </p>
+</section><section>
+    <h2>Reflexiona</h2>
+    <p>
+        Tus padres no son perfectos, pero están ahí.
+    </p>
+    <p>
+        A su manera, te cuidan, te enseñan y se preocupan por ti.
+    </p>
+    <p class="highlight">
+        No esperes a perder un momento para valorar lo que tienes.
+    </p>
+</section><section>
+    <h2>Mensaje final</h2>
+    <p class="highlight">
+        Hoy estás a tiempo.
+    </p>
+    <p>
+        Habla, perdona, escucha.
+        Porque todo puede cambiar… en un segundo.
+    </p>
+</section><footer>
+    <p>Proyecto escolar - Valora a tu familia</p>
+</footer><script>
+function scrollToContent() {
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+    });
+}
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const trigger = window.innerHeight - 100;
+
+        if(sectionTop < trigger) {
+            section.classList.add("show");
+        }
+    });
+});
+</script></body>
+</html>
